@@ -33,7 +33,7 @@ class Item extends React.PureComponent<ItemPropTypes> {
           (index + 1) % 5 === 0 ? { borderRightWidth: borderWidth + 1, height: 50 } : null,
           style,
           (index + 1) % 5 === 0 ? tenthItemStyle : null,
-          index === length-1 ? { borderRightWidth: borderWidth + 1, marginLeft: -borderWidth*3, height: 50 } : null
+          index === length-1 ? { borderRightWidth: borderWidth + 1, marginLeft: -borderWidth*2, height: 50 } : null
         ]}
       />
     );
