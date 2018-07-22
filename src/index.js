@@ -7,7 +7,7 @@ import Item from './Item';
 import type { RNInfinityListSliderPropTypes, RNInfinityListSliderState, Event, Element } from './types';
 
 const itemAmountPerScreen = 20;
-const borderWidth = 1;
+const borderWidth = 2;
 const {
   FlatList,
   View,
@@ -58,7 +58,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     const { oneItemWidth } = this.state;
     const { onValueChange } = this.props;
 
-    const newValue = Math.floor(event.nativeEvent.contentOffset.x / oneItemWidth) * this.props.multiplicity;
+    const newValue = (event.nativeEvent.contentOffset.x / oneItemWidth).toFixed(1) * this.props.multiplicity;
     onValueChange(parseFloat(parseFloat(newValue).toFixed(this.props.decimalPlaces)));
   };
 
@@ -78,6 +78,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
       index={element.index}
       style={this.props.itemStyle}
       tenthItemStyle={this.props.tenthItemStyle}
+      length={this.props.arrayLength}
     />
   );
 

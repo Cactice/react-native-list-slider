@@ -23,16 +23,17 @@ class Item extends React.PureComponent<ItemPropTypes> {
   };
 
   render() {
-    const { oneColumnSize, borderWidth, index, style, tenthItemStyle } = this.props;
+    const { oneColumnSize, borderWidth, index, style, tenthItemStyle, length} = this.props;
 
     return (
       <View
         style={[
           styles.subBlock,
           { width: oneColumnSize, borderRightWidth: borderWidth },
-          (index + 1) % 10 === 0 ? { borderRightWidth: borderWidth + 2, height: 70 } : null,
+          (index + 1) % 5 === 0 ? { borderRightWidth: borderWidth + 1, height: 50 } : null,
           style,
-          (index + 1) % 10 === 0 ? tenthItemStyle : null,
+          (index + 1) % 5 === 0 ? tenthItemStyle : null,
+          index === length-1 ? { borderRightWidth: borderWidth + 1, marginLeft: -borderWidth*3, height: 50 } : null
         ]}
       />
     );

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   mainContainer: {
     width: '100%',
-    height: 80,
+    height: 200,
     position: 'relative',
   },
   middleContainer: {
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   defaultThumb: {
+    marginTop: 60,
     position: 'absolute',
     left: '50%',
     borderLeftWidth: 3,
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
   },
   subBlock: {
-    height: 55,
+    height: 25,
     backgroundColor: 'transparent',
     alignSelf: 'center',
     flexDirection: 'row',
